@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Med</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+        <h1 class="text-2xl font-semibold text-center mb-4">Hello Med</h1>
+
+        <form action="/create" method="post" class="space-y-4">
+            <div>
+                <label for="name" class="block mb-1">Medicine Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter medicine name" class="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label for="start_date" class="block mb-1">Start Date</label>
+                <input type="date" id="start_date" name="start_date" class="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label for="end_date" class="block mb-1">End Date</label>
+                <input type="date" id="end_date" name="end_date" class="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label for="time" class="block mb-1">Time</label>
+                <input type="text" id="time" name="time" placeholder="Enter time (e.g., 8:30 AM)" class="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+        </form>
+
+        <div class="mt-4 text-center">
+            <a href="/read" class="text-blue-500 hover:underline">View All Reminders</a>
+        </div>
+    </div>
+</body>
+</html>

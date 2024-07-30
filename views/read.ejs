@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Medicine Schedules</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-md shadow-md">
+        <a href="/logout" class="text-blue-500 hover:underline">Logout</a>
+        <h1 class="text-2xl font-semibold text-center my-4">All Medicine Schedules</h1>
+
+        <div class="space-y-6">
+            <% allMedicines.forEach(function(medicine){ %>
+                <div class="border border-gray-200 rounded p-4">
+                    <p class="text-lg font-semibold">Name: <%= medicine.name %></p>
+                    <p>Start Date: <%= medicine.formatted_start_date %></p>
+                    <p>End Date: <%= medicine.formatted_end_date %></p>
+                    <p>Time:</p>
+                    <ul class="list-disc list-inside">
+                        <% medicine.time.forEach(function(tim){ %>
+                            <li><%= tim %></li>
+                        <% }) %>
+                    </ul>
+                    <div class="mt-2">
+                        <a href="/delete/<%= medicine._id %>" class="text-red-500 hover:underline mr-4">Delete</a>
+                        <a href="/update/<%= medicine._id %>" class="text-blue-500 hover:underline">Edit</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
